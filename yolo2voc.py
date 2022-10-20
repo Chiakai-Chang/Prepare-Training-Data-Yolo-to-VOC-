@@ -85,7 +85,7 @@ for data_type in ['train', 'val', 'test']:
             # 圖片複製到 JPEGImages 資料夾
             shutil.copy(
                 os.path.join(source_img_path[data_type], file), 
-                os.path.join(folder_JPEGImages, data_type, file)
+                os.path.join(folder_JPEGImages, file)
                 )
         main_file.close()
         continue
@@ -96,7 +96,7 @@ for data_type in ['train', 'val', 'test']:
         
         # 圖片複製到 JPEGImages 資料夾
         img_path = os.path.join(source_img_path[data_type], file.replace('.txt','.jpg'))
-        shutil.copy(img_path, os.path.join(folder_JPEGImages, data_type,file.replace('.txt','.jpg')))
+        shutil.copy(img_path, os.path.join(folder_JPEGImages, file.replace('.txt','.jpg')))
         
         # 讀取圖片
         img_file = Image.open(img_path)
